@@ -1,0 +1,46 @@
+.chessboard > div {
+    display: flex;
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+}
+
+.chessboard {
+    width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.grey {
+    background-color: grey;
+}
+
+.green {
+    background-color: rgb(99, 255, 99);
+}
+
+.cyan {
+    background-color: rgb(102, 253, 253);
+}
+
+.pink {
+    background-color: rgb(255, 201, 210);
+}
+
+.works {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-gap: 5px;
+}
+
+.work {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
