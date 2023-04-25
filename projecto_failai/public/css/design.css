@@ -1,0 +1,56 @@
+header,
+footer {
+  background-color: rgb(196, 62, 62);
+}
+
+footer p {
+  color: white;
+}
+footer span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+li > a {
+  color: white;
+}
+
+nav > ul > li > a:hover {
+  color: rgb(255, 255, 160);
+}
+
+body > aside {
+  background-color: rgb(255, 255, 160);
+}
+
+aside > div {
+  width: 80%;
+  padding: 5px;
+}
+
+aside > div h3 {
+  text-align: center;
+  margin: 5px 0 5px 0;
+}
+
+aside > div p {
+  text-align: center;
+}
+
+.grey {
+  background-color: grey;
+}
+
+.green {
+  background-color: rgb(99, 255, 99);
+}
+
+.cyan {
+  background-color: rgb(102, 253, 253);
+}
+
+.pink {
+  background-color: rgb(255, 201, 210);
+}
