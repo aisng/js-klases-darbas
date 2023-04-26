@@ -1,32 +1,30 @@
 .chessboard > div {
-    display: flex;
-    width: 100px;
-    height: 100px;
-    margin: 5px;
-    padding: 10px;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid black;
+  display: flex;
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
 }
 
 .chessboard {
-    width: 600px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  width: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  
 }
 
-
-
 .works {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    grid-gap: 5px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-gap: 5px;
 }
 
 .work {
-    display: grid;
-    justify-content: center;
-    align-items: center;
+  display: grid;
+  justify-content: center;
+  align-items: center;
 }

@@ -1,0 +1,14 @@
+@media only screen and (max-width: 768px) {
+  body {
+    grid-template-rows: 50px auto auto 50px;
+    grid-template-areas:
+      "h h h h h h h h h h h h"
+      "m m m m m m m m m m m m"
+      "a a a a a a a a a a a a"
+      "f f f f f f f f f f f f";
+  }
+
+  body > aside > div {
+    width: 100%;
+  }
+}

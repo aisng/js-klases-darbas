@@ -1,0 +1,33 @@
+@media only screen and (max-width: 600px) {
+  body {
+    min-width: 400px;
+    grid-template-rows: 50px auto auto 50px;
+    grid-template-areas:
+      "h h h h h h h h h h h h"
+      "m m m m m m m m m m m m"
+      "a a a a a a a a a a a a"
+      "f f f f f f f f f f f f";
+  }
+
+  body > aside > div {
+    width: 100%;
+  }
+
+  header > nav {
+    justify-content: center;
+  }
+
+  .works {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .chessboard {
+    width: 400px;
+  }
+
+  .chessboard > div {
+    width: 70px;
+    height: 70px;
+    font-size: 0.73em;
+  }
+}
