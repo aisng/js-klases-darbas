@@ -37,6 +37,8 @@ body {
 }
 
 body > header {
+  display: flex;
+  justify-content: right;
   grid-area: h;
 }
 
@@ -61,5 +63,4 @@ main > form {
 body > aside {
   display: flex;
   justify-content: center;
-  
 }

@@ -11,4 +11,8 @@
   body > aside > div {
     width: 100%;
   }
+
+  .works {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
