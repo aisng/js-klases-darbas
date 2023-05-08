@@ -55,3 +55,8 @@ aside > div p {
   background-color: rgb(255, 201, 210);
 }
 
+#filterDialog {
+  position: fixed;
+  z-index: 1;
+  padding: 5px;
+}

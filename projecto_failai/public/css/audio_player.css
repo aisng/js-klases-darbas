@@ -1,0 +1,46 @@
+.audio-player {
+  margin: 10px;
+  padding: 5px;
+  margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: 1fr 11fr;
+}
+/* more like design below */
+
+.btn-toggle-pause {
+  background-color: rgb(196, 62, 62);
+  border-radius: 100%;
+  padding: 15px;
+  border: none;
+  margin: 2px;
+  cursor: pointer;
+  transition: all 0.1s ease-out;
+}
+
+.volume-control {
+  appearance: slider-vertical;
+  accent-color: rgb(196, 62, 62);
+  cursor: pointer;
+}
+
+.player-controls {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 8fr auto;
+  justify-content: center;
+  align-items: center;
+  grid-template-areas: "p p p p p p i i i i i";
+  /* "p p ti ti ti ti ti ti ti i i"; */
+}
+
+.player-controls > button {
+  grid-area: p;
+}
+
+.player-controls > input {
+  grid-area: i;
+}
+
+.player-controls > span {
+  grid-area: ti;
+}
