@@ -46,18 +46,18 @@
     <main>
         <div>
             <h1>Kontaktai</h1>
-            <form action="kursiustiduomenis.php" method="post" class="contactForm">
+            <form action="atsakymas.html" method="post" class="contact-form">
                 <label for="vardas">Vardas</label>
-                <input type="text" name="vardas" id="vardas">
+                <input type="text" name="firstName" id="vardas">
 
                 <label for="Pavarde">Pavarde</label>
-                <input type="text" name="Pavarde" id="Pavarde">
+                <input type="text" name="lastName" id="pavarde">
 
                 <label for="email">El. paštas</label>
                 <input type="email" name="email" id="email">
 
                 <label for="kursas">Kursas</label>
-                <select name="kursas" id="kursas">
+                <select name="course" id="kursas">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -66,12 +66,17 @@
 
                 <label for="komentaras">Komentaras</label>
 
-                <textarea name="komentaras" id="komentaras" cols="30" rows="10"></textarea>
+                <textarea name="comment" id="komentaras" cols="30" rows="10"></textarea>
 
-                <div>
-                    <button type="submit">Siųsti</button>
-                </div>
+
+                <button type="submit">Siųsti</button>
+
             </form>
+            <div>
+                <p id="answer-text"></p>
+            </div>
+            <script src="/js/dynamic_content.js" defer></script>
+            <script src="/js/form.js" defer></script>
         </div>
     </main>
     <footer>
@@ -79,7 +84,7 @@
             <p>&copy; 2023 - visos teisės saugomos</p>
         </span>
     </footer>
-    <script src="/js/dynamic_content.js" defer></script>
+
 </body>
 
 </html>

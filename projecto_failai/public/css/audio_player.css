@@ -26,11 +26,12 @@
 .player-controls {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 8fr auto;
+  grid-template-rows: auto auto;
   justify-content: center;
   align-items: center;
-  grid-template-areas: "p p p p p p i i i i i";
-  /* "p p ti ti ti ti ti ti ti i i"; */
+  grid-template-areas:
+    "p p p p p p i i i i i"
+    "ti ti ti ti ti ti ti ti ti ti ti";
 }
 
 .player-controls > button {
