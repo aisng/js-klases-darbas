@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <link rel="stylesheet" href="/css/audio_player.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/css/audio_player.css" />
     <link rel="stylesheet" href="/css/layout.css" />
     <link rel="stylesheet" href="/css/design.css" />
     <link rel="stylesheet" href="/css/portfolio.css" />
     <link rel="stylesheet" href="/css/tablets_layout.css" />
     <link rel="stylesheet" href="/css/phones_layout.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <nav>
-            <ul>
-                <li>
+      <nav data-state="inactive">
+        <ul>
+          <!-- <li>
                     <a href="/">Pradžia</a>
                 </li>
                 <li>
@@ -30,143 +32,206 @@
                 </li>
                 <li>
                     <a href="istorija.html">Istorija</a>
-                </li>
-            </ul>
-        </nav>
+                </li> -->
+        </ul>
+      </nav>
     </header>
     <aside>
-        <div>
-            <h3>Tip of the day</h3>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum in
-                architecto delectus iste magni maiores labore omnis, magnam fuga
-                cumque alias fugiat animi, ea perspiciatis aut minima velit nesciunt
-                dolorum voluptatibus doloribus! Deleniti quod tempora perspiciatis
-                nulla soluta? Nostrum quibusdam vitae, nam doloribus iusto nemo
-                aliquid assumenda modi voluptates, porro quod. Voluptatibus vero
-                incidunt repellat quidem! Dolorum quae accusantium.
-            </p>
-        </div>
+      <div>
+        <h3>Tip of the day</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum in
+          architecto delectus iste magni maiores labore omnis, magnam fuga
+          cumque alias fugiat animi, ea perspiciatis aut minima velit nesciunt
+          dolorum voluptatibus doloribus! Deleniti quod tempora perspiciatis
+          nulla soluta? Nostrum quibusdam vitae, nam doloribus iusto nemo
+          aliquid assumenda modi voluptates, porro quod. Voluptatibus vero
+          incidunt repellat quidem! Dolorum quae accusantium.
+        </p>
+      </div>
     </aside>
     <main>
-        <div>
-            <h1>Portfolio</h1>
+      <div>
+        <h1>Portfolio</h1>
 
-            <div class="audio-player">
-                <div class="player-controls">
-                    <button type="button" class="btn-toggle-pause">
-                        <i id="play-icon" class="fa fa-play"></i>
-                    </button>
-                    <input type="range" class="volume-control" min="0" max="1" step="0.01" value="0.5">
-                    <span class="time-info">0:00/0:00</span>
-                </div>
+        <div class="audio-player">
+          <div class="player-controls">
+            <button type="button" class="btn-toggle-pause">
+              <i id="play-icon" class="fa fa-play"></i>
+            </button>
+            <input
+              type="range"
+              class="volume-control"
+              min="0"
+              max="1"
+              step="0.01"
+              value="0.5"
+            />
+            <span class="time-info">0:00/0:00</span>
+          </div>
 
-                <div id="audiowave"></div>
+          <div id="audiowave"></div>
+        </div>
+
+        <dialog id="filterDialog">
+          <form>
+            <label
+              >Pick a color:
+              <select name="" id="">
+                <option value="none">None</option>
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+              </select>
+            </label>
+            <div>
+              <button id="cancelBtn" value="cancel" formmethod="dialog">
+                Cancel
+              </button>
             </div>
+          </form>
+        </dialog>
 
-            <dialog id="filterDialog">
-                <form>
-                    <label>Pick a color:
-                        <select name="" id="">
-                            <option value="default">None</option>
-                            <option value="red">Red</option>
-                            <option value="blue">Blue</option>
-                            <option value="green">Green</option>
-                        </select>
-                    </label>
-                    <div>
-                        <button id="cancelBtn" value="cancel" formmethod="dialog">Cancel</button>
-                    </div>
-                </form>
-            </dialog>
-
-            <div class="works">
-                <div class="work">
-                    <img src="https://picsum.photos/500" alt="work 1" width="200" height="200" /><span>darbas 1</span>
-                </div>
-                <div class="work">
-                    <img src="https://picsum.photos/500" alt="work 2" width="200" height="200" /><span>darbas 2</span>
-                </div>
-                <div class="work">
-                    <img src="https://picsum.photos/500" alt="work 3" width="200" height="200" /><span>darbas 3</span>
-                </div>
-                <div class="work">
-                    <img src="https://picsum.photos/500" alt="work 4" width="200" height="200" /><span>darbas 4</span>
-                </div>
-                <div class="work">
-                    <img src="https://picsum.photos/500" alt="work 5" width="200" height="200" /><span>darbas 5</span>
-                </div>
-                <div class="work">
-                    <img src="https://picsum.photos/500" alt="work 6" width="200" height="200" /><span>darbas 6</span>
-                </div>
-                <div class="work">
-                    <img src="https://picsum.photos/500" alt="work 7" width="200" height="200" /><span>darbas 7</span>
-                </div>
-                <div class="work">
-                    <img src="https://picsum.photos/500" alt="work 8" width="200" height="200" /><span>darbas 8</span>
-                </div>
-                <div class="work">
-                    <img src="https://picsum.photos/500" alt="work 9" width="200" height="200" /><span>darbas 9</span>
-                </div>
-                <div class="work">
-                    <img src="https://picsum.photos/500" alt="work 10 width=" 200" height="200""><span>darbas 10</span>
+        <div class="works">
+          <div class="work">
+            <img
+              src="https://picsum.photos/500"
+              alt="work 1"
+              width="200"
+              height="200"
+            /><span>darbas 1</span>
           </div>
-          <div class=" work">
-                    <img src=" https://picsum.photos/500" alt="work 11 width=" 200" height="200""><span>darbas 11</span>
+          <div class="work">
+            <img
+              src="https://picsum.photos/500"
+              alt="work 2"
+              width="200"
+              height="200"
+            /><span>darbas 2</span>
           </div>
-          <div class=" work">
-                    <img src=" https://picsum.photos/500" alt="work 12 width=" 200" height="200""><span>darbas 12</span>
+          <div class="work">
+            <img
+              src="https://picsum.photos/500"
+              alt="work 3"
+              width="200"
+              height="200"
+            /><span>darbas 3</span>
           </div>
-          <div class=" work">
-                    <img src=" https://picsum.photos/500" alt="work 13 width=" 200" height="200""><span>darbas 13</span>
+          <div class="work">
+            <img
+              src="https://picsum.photos/500"
+              alt="work 4"
+              width="200"
+              height="200"
+            /><span>darbas 4</span>
           </div>
-          <div class=" work">
-                    <img src=" https://picsum.photos/500" alt="work 14 width=" 200" height="200""><span>darbas 14</span>
+          <div class="work">
+            <img
+              src="https://picsum.photos/500"
+              alt="work 5"
+              width="200"
+              height="200"
+            /><span>darbas 5</span>
           </div>
-          <div class=" work">
-                    <img src=" https://picsum.photos/500" alt="work 15 width=" 200" height="200""><span>darbas 15</span>
+          <div class="work">
+            <img
+              src="https://picsum.photos/500"
+              alt="work 6"
+              width="200"
+              height="200"
+            /><span>darbas 6</span>
+          </div>
+          <div class="work">
+            <img
+              src="https://picsum.photos/500"
+              alt="work 7"
+              width="200"
+              height="200"
+            /><span>darbas 7</span>
+          </div>
+          <div class="work">
+            <img
+              src="https://picsum.photos/500"
+              alt="work 8"
+              width="200"
+              height="200"
+            /><span>darbas 8</span>
+          </div>
+          <div class="work">
+            <img
+              src="https://picsum.photos/500"
+              alt="work 9"
+              width="200"
+              height="200"
+            /><span>darbas 9</span>
+          </div>
+          <div class="work">
+            <img src="https://picsum.photos/500" alt="work 10 width=" 200"
+            height="200""><span>darbas 10</span>
+          </div>
+          <div class="work">
+            <img src=" https://picsum.photos/500" alt="work 11 width=" 200"
+            height="200""><span>darbas 11</span>
+          </div>
+          <div class="work">
+            <img src=" https://picsum.photos/500" alt="work 12 width=" 200"
+            height="200""><span>darbas 12</span>
+          </div>
+          <div class="work">
+            <img src=" https://picsum.photos/500" alt="work 13 width=" 200"
+            height="200""><span>darbas 13</span>
+          </div>
+          <div class="work">
+            <img src=" https://picsum.photos/500" alt="work 14 width=" 200"
+            height="200""><span>darbas 14</span>
+          </div>
+          <div class="work">
+            <img src=" https://picsum.photos/500" alt="work 15 width=" 200"
+            height="200""><span>darbas 15</span>
           </div>
         </div>
       </div>
-      <div class=" chessboard">
-                    <div class="grey">&lt;DIV 1&gt;</div>
-                    <div class="cyan">&lt;DIV 2&gt;</div>
-                    <div class="grey">&lt;DIV 3&gt;</div>
-                    <div class="green">&lt;DIV 4&gt;</div>
-                    <div class="grey">&lt;DIV 5&gt;</div>
-                    <div class="cyan">&lt;DIV 6&gt;</div>
-                    <div class="grey">&lt;DIV 7&gt;</div>
-                    <div class="green">&lt;DIV 8&gt;</div>
-                    <div class="grey">&lt;DIV 9&gt;</div>
-                    <div class="cyan">&lt;DIV 10&gt;</div>
-                    <div class="grey">&lt;DIV 11&gt;</div>
-                    <div class="green">&lt;DIV 12&gt;</div>
-                    <div class="grey">&lt;DIV 13&gt;</div>
-                    <div class="cyan">&lt;DIV 14&gt;</div>
-                    <div class="grey">&lt;DIV 15&gt;</div>
-                    <div class="pink">&lt;DIV 16&gt;</div>
-                    <div class="grey">&lt;DIV 17&gt;</div>
-                    <div class="pink">&lt;DIV 18&gt;</div>
-                    <div class="grey">&lt;DIV 19&gt;</div>
-                    <div class="pink">&lt;DIV 20&gt;</div>
-                    <div class="grey">&lt;DIV 21&gt;</div>
-                    <div class="pink">&lt;DIV 22&gt;</div>
-                    <div class="grey">&lt;DIV 23&gt;</div>
-                    <div class="pink">&lt;DIV 24&gt;</div>
-                    <div class="grey">&lt;DIV 25&gt;</div>
-                </div>
+      <div class="chessboard">
+        <div class="grey">&lt;DIV 1&gt;</div>
+        <div class="cyan">&lt;DIV 2&gt;</div>
+        <div class="grey">&lt;DIV 3&gt;</div>
+        <div class="green">&lt;DIV 4&gt;</div>
+        <div class="grey">&lt;DIV 5&gt;</div>
+        <div class="cyan">&lt;DIV 6&gt;</div>
+        <div class="grey">&lt;DIV 7&gt;</div>
+        <div class="green">&lt;DIV 8&gt;</div>
+        <div class="grey">&lt;DIV 9&gt;</div>
+        <div class="cyan">&lt;DIV 10&gt;</div>
+        <div class="grey">&lt;DIV 11&gt;</div>
+        <div class="green">&lt;DIV 12&gt;</div>
+        <div class="grey">&lt;DIV 13&gt;</div>
+        <div class="cyan">&lt;DIV 14&gt;</div>
+        <div class="grey">&lt;DIV 15&gt;</div>
+        <div class="pink">&lt;DIV 16&gt;</div>
+        <div class="grey">&lt;DIV 17&gt;</div>
+        <div class="pink">&lt;DIV 18&gt;</div>
+        <div class="grey">&lt;DIV 19&gt;</div>
+        <div class="pink">&lt;DIV 20&gt;</div>
+        <div class="grey">&lt;DIV 21&gt;</div>
+        <div class="pink">&lt;DIV 22&gt;</div>
+        <div class="grey">&lt;DIV 23&gt;</div>
+        <div class="pink">&lt;DIV 24&gt;</div>
+        <div class="grey">&lt;DIV 25&gt;</div>
+      </div>
     </main>
     <footer>
-        <span>
-            <p>&copy; 2023 - visos teisės saugomos</p>
-        </span>
+      <span>
+        <p>&copy; 2023 - visos teisės saugomos</p>
+      </span>
     </footer>
-    <script src="/js/dynamic_content.js" defer></script>
-    <script src="/js/porfolio.js" defer></script>
+    <script src="/js/menu.js" defer></script>
+    <script src="/js/portfolio.js" defer></script>
     <script src="https://unpkg.com/wavesurfer.js" defer></script>
-    <script src="https://unpkg.com/wavesurfer.js/dist/plugin/wavesurfer.cursor.min.js" defer></script>
+    <script
+      src="https://unpkg.com/wavesurfer.js/dist/plugin/wavesurfer.cursor.min.js"
+      defer
+    ></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" defer></script>
     <script src="/js/audio_player.js" defer></script>
-</body>
-
+  </body>
 </html>
