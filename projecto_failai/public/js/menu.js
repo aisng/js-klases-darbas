@@ -85,6 +85,7 @@ if (page) {
 
 function getMenuList() {
   const jsonMenu = getMenuJsonStr();
+  console.log(jsonMenu);
   return JSON.parse(jsonMenu);
 }
 
@@ -111,3 +112,5 @@ function makeNavItemActive() {
 }
 
 makeNavItemActive();
+
+$();

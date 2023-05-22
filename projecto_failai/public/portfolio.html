@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
@@ -15,25 +16,13 @@
     <link rel="stylesheet" href="/css/portfolio.css" />
     <link rel="stylesheet" href="/css/tablets_layout.css" />
     <link rel="stylesheet" href="/css/phones_layout.css" />
+    <link rel="stylesheet" href="/css/comments.css" />
   </head>
 
   <body>
     <header>
-      <nav data-state="inactive">
-        <ul>
-          <!-- <li>
-                    <a href="/">Pradžia</a>
-                </li>
-                <li>
-                    <a href="kontaktai.html">Kontaktai</a>
-                </li>
-                <li>
-                    <a href="portfolio.html">Portfolio</a>
-                </li>
-                <li>
-                    <a href="istorija.html">Istorija</a>
-                </li> -->
-        </ul>
+      <nav>
+        <ul></ul>
       </nav>
     </header>
     <aside>
@@ -73,6 +62,9 @@
           <div id="audiowave"></div>
         </div>
 
+        <div class="comments">
+          <button type="submit">Add comment</button>
+        </div>
         <dialog id="filterDialog">
           <form>
             <label
@@ -92,131 +84,51 @@
           </form>
         </dialog>
 
-        <div class="works">
-          <div class="work">
-            <img
-              src="https://picsum.photos/500"
-              alt="work 1"
-              width="200"
-              height="200"
-            /><span>darbas 1</span>
-          </div>
-          <div class="work">
-            <img
-              src="https://picsum.photos/500"
-              alt="work 2"
-              width="200"
-              height="200"
-            /><span>darbas 2</span>
-          </div>
-          <div class="work">
-            <img
-              src="https://picsum.photos/500"
-              alt="work 3"
-              width="200"
-              height="200"
-            /><span>darbas 3</span>
-          </div>
-          <div class="work">
-            <img
-              src="https://picsum.photos/500"
-              alt="work 4"
-              width="200"
-              height="200"
-            /><span>darbas 4</span>
-          </div>
-          <div class="work">
-            <img
-              src="https://picsum.photos/500"
-              alt="work 5"
-              width="200"
-              height="200"
-            /><span>darbas 5</span>
-          </div>
-          <div class="work">
-            <img
-              src="https://picsum.photos/500"
-              alt="work 6"
-              width="200"
-              height="200"
-            /><span>darbas 6</span>
-          </div>
-          <div class="work">
-            <img
-              src="https://picsum.photos/500"
-              alt="work 7"
-              width="200"
-              height="200"
-            /><span>darbas 7</span>
-          </div>
-          <div class="work">
-            <img
-              src="https://picsum.photos/500"
-              alt="work 8"
-              width="200"
-              height="200"
-            /><span>darbas 8</span>
-          </div>
-          <div class="work">
-            <img
-              src="https://picsum.photos/500"
-              alt="work 9"
-              width="200"
-              height="200"
-            /><span>darbas 9</span>
-          </div>
-          <div class="work">
-            <img src="https://picsum.photos/500" alt="work 10 width=" 200"
-            height="200""><span>darbas 10</span>
-          </div>
-          <div class="work">
-            <img src=" https://picsum.photos/500" alt="work 11 width=" 200"
-            height="200""><span>darbas 11</span>
-          </div>
-          <div class="work">
-            <img src=" https://picsum.photos/500" alt="work 12 width=" 200"
-            height="200""><span>darbas 12</span>
-          </div>
-          <div class="work">
-            <img src=" https://picsum.photos/500" alt="work 13 width=" 200"
-            height="200""><span>darbas 13</span>
-          </div>
-          <div class="work">
-            <img src=" https://picsum.photos/500" alt="work 14 width=" 200"
-            height="200""><span>darbas 14</span>
-          </div>
-          <div class="work">
-            <img src=" https://picsum.photos/500" alt="work 15 width=" 200"
-            height="200""><span>darbas 15</span>
-          </div>
+        <div>
+          <form class="works-filter">
+            <input type="checkbox" name="python" />
+            <label for="python">Python</label>
+
+            <input type="checkbox" name="js" />
+            <label for="js">JavaScript</label>
+
+            <input type="checkbox" name="html" />
+            <label for="html">HTML</label>
+
+            <input type="checkbox" name="css" />
+            <label for="css">CSS</label>
+
+            <button type="submit">Clear</button>
+          </form>
         </div>
-      </div>
-      <div class="chessboard">
-        <div class="grey">&lt;DIV 1&gt;</div>
-        <div class="cyan">&lt;DIV 2&gt;</div>
-        <div class="grey">&lt;DIV 3&gt;</div>
-        <div class="green">&lt;DIV 4&gt;</div>
-        <div class="grey">&lt;DIV 5&gt;</div>
-        <div class="cyan">&lt;DIV 6&gt;</div>
-        <div class="grey">&lt;DIV 7&gt;</div>
-        <div class="green">&lt;DIV 8&gt;</div>
-        <div class="grey">&lt;DIV 9&gt;</div>
-        <div class="cyan">&lt;DIV 10&gt;</div>
-        <div class="grey">&lt;DIV 11&gt;</div>
-        <div class="green">&lt;DIV 12&gt;</div>
-        <div class="grey">&lt;DIV 13&gt;</div>
-        <div class="cyan">&lt;DIV 14&gt;</div>
-        <div class="grey">&lt;DIV 15&gt;</div>
-        <div class="pink">&lt;DIV 16&gt;</div>
-        <div class="grey">&lt;DIV 17&gt;</div>
-        <div class="pink">&lt;DIV 18&gt;</div>
-        <div class="grey">&lt;DIV 19&gt;</div>
-        <div class="pink">&lt;DIV 20&gt;</div>
-        <div class="grey">&lt;DIV 21&gt;</div>
-        <div class="pink">&lt;DIV 22&gt;</div>
-        <div class="grey">&lt;DIV 23&gt;</div>
-        <div class="pink">&lt;DIV 24&gt;</div>
-        <div class="grey">&lt;DIV 25&gt;</div>
+        <div class="works"></div>
+        <div class="chessboard">
+          <div class="grey">&lt;DIV 1&gt;</div>
+          <div class="cyan">&lt;DIV 2&gt;</div>
+          <div class="grey">&lt;DIV 3&gt;</div>
+          <div class="green">&lt;DIV 4&gt;</div>
+          <div class="grey">&lt;DIV 5&gt;</div>
+          <div class="cyan">&lt;DIV 6&gt;</div>
+          <div class="grey">&lt;DIV 7&gt;</div>
+          <div class="green">&lt;DIV 8&gt;</div>
+          <div class="grey">&lt;DIV 9&gt;</div>
+          <div class="cyan">&lt;DIV 10&gt;</div>
+          <div class="grey">&lt;DIV 11&gt;</div>
+          <div class="green">&lt;DIV 12&gt;</div>
+          <div class="grey">&lt;DIV 13&gt;</div>
+          <div class="cyan">&lt;DIV 14&gt;</div>
+          <div class="grey">&lt;DIV 15&gt;</div>
+          <div class="pink">&lt;DIV 16&gt;</div>
+          <div class="grey">&lt;DIV 17&gt;</div>
+          <div class="pink">&lt;DIV 18&gt;</div>
+          <div class="grey">&lt;DIV 19&gt;</div>
+          <div class="pink">&lt;DIV 20&gt;</div>
+          <div class="grey">&lt;DIV 21&gt;</div>
+          <div class="pink">&lt;DIV 22&gt;</div>
+          <div class="grey">&lt;DIV 23&gt;</div>
+          <div class="pink">&lt;DIV 24&gt;</div>
+          <div class="grey">&lt;DIV 25&gt;</div>
+        </div>
       </div>
     </main>
     <footer>

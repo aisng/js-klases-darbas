@@ -1,0 +1,87 @@
+[
+  {
+    "title": "Tank game",
+    "src": "https://picsum.photos/500",
+    "category": "python"
+  },
+  {
+    "title": "Form design",
+    "src": "https://picsum.photos/500",
+    "category": "html css"
+  },
+  {
+    "title": "Audio player",
+    "src": "https://picsum.photos/500",
+    "category": "js python"
+  },
+  {
+    "title": "Website layout",
+    "src": "https://picsum.photos/500",
+    "category": "html css"
+  },
+  {
+    "title": "Budget app",
+    "src": "https://picsum.photos/500",
+    "category": "python"
+  },
+  {
+    "title": "Button design",
+    "src": "https://picsum.photos/500",
+    "category": "html css"
+  },
+  {
+    "title": "Currency rates API",
+    "src": "https://picsum.photos/500",
+    "category": "python"
+  },
+  {
+    "title": "Online shop",
+    "src": "https://picsum.photos/500",
+    "category": "python js css html"
+  },
+  {
+    "title": "Rest API",
+    "src": "https://picsum.photos/500",
+    "category": "python js"
+  },
+  {
+    "title": "Flask blog",
+    "src": "https://picsum.photos/500",
+    "category": "python html css"
+  },
+  {
+    "title": "Django SPA",
+    "src": "https://picsum.photos/500",
+    "category": "python js html css"
+  },
+  {
+    "title": "JS Calculator",
+    "src": "https://picsum.photos/500",
+    "category": "js"
+  },
+  {
+    "title": "Django blog",
+    "src": "https://picsum.photos/500",
+    "category": "python"
+  },
+  {
+    "title": "HTML templates",
+    "src": "https://picsum.photos/500",
+    "category": "html"
+  },
+  {
+    "title": "Weather API",
+    "src": "https://picsum.photos/500",
+    "category": "python"
+  },
+  {
+    "title": "CSS animation",
+    "src": "https://picsum.photos/500",
+    "category": "css"
+  },
+  {
+    "title": "Landing page",
+    "src": "https://picsum.photos/500",
+    "category": "html css"
+  }
+]

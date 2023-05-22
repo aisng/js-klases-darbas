@@ -1,0 +1,17 @@
+.comments {
+  margin: 10px;
+}
+.comment {
+  display: flex;
+  padding: 5px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  align-items: center;
+}
+
+.comment > label,
+input,
+button,
+p {
+  margin-right: 5px;
+}
