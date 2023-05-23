@@ -14,21 +14,37 @@ async function getPortfolio() {
   }
 }
 
+// function generatePortfolioElement(data) {
+//   let div = document.createElement("div");
+//   div.className = "work " + data.category;
+//   let img = document.createElement("img");
+//   let span = document.createElement("span");
+//   img.src = data.src;
+//   img.alt = data.title;
+//   img.height = 200;
+//   img.width = 200;
+//   span.textContent = data.title;
+
+//   div.append(img);
+//   div.append(span);
+
+//   return div;
+// }
+
 function generatePortfolioElement(data) {
-  let div = document.createElement("div");
-  div.className = "work " + data.category;
-  let img = document.createElement("img");
-  let span = document.createElement("span");
-  img.src = data.src;
-  img.alt = data.title;
-  img.height = 200;
-  img.width = 200;
-  span.textContent = data.title;
+  const div = $("<div>").addClass("work " + data.category);
+  const img = $("<img>").attr({
+    src: data.src,
+    alt: data.title,
+    height: 200,
+    width: 200,
+  });
+  const span = $("<span>").text(data.title);
 
   div.append(img);
   div.append(span);
 
-  return div;
+  return div[0];
 }
 
 async function generatePorfolio(category = null) {
@@ -38,7 +54,10 @@ async function generatePorfolio(category = null) {
   portfolioData.forEach((item) => {
     if (category == null || item.category.includes(category)) {
       let workElement = generatePortfolioElement(item);
+      let imgElement = $(workElement).find("img");
       portfolioDiv.append(workElement);
+
+      $(imgElement).on("click", handleImageClick);
     }
   });
 }
@@ -63,19 +82,114 @@ function applyPortfolioFilter() {
       generatePorfolio();
     }
   });
-  
+
   $(".works-filter > button").on("click", (event) => {
     event.preventDefault();
     checkedFilters = [];
+    $("input[type='checkbox']").prop("checked", false);
 
-    const checkboxes = document.querySelectorAll("input[type='checkbox']");
-    checkboxes.forEach((checkbox) => (checkbox.checked = false));
     generatePorfolio();
   });
 }
 
 generatePorfolio();
 applyPortfolioFilter();
+
+function handleImageClick(event) {
+  const mouseX = event.clientX;
+  const mouseY = event.clientY;
+
+  const filterDialog = $("#filterDialog");
+  const filterColorOptions = filterDialog.find("select");
+  filterDialog.css({
+    top: `${mouseY}px`,
+    left: `${mouseX}px`,
+  });
+
+  let currentImage = event.target;
+
+  filterDialog.show();
+
+  $(filterColorOptions).on("change", (e) => {
+    let selectedColor = e.target.value;
+
+    if (currentImage !== null) {
+      switch (selectedColor) {
+        case "red":
+          $(currentImage).css(
+            "filter",
+            "brightness(50%) sepia(100%) hue-rotate(0deg) saturate(200%)"
+          );
+          break;
+        case "blue":
+          $(currentImage).css(
+            "filter",
+            "brightness(50%) sepia(100%) hue-rotate(240deg) saturate(200%)"
+          );
+          break;
+        case "green":
+          $(currentImage).css(
+            "filter",
+            "brightness(50%) sepia(100%) hue-rotate(120deg) saturate(200%)"
+          );
+          break;
+        default:
+          $(currentImage).css("filter", "none");
+          break;
+      }
+    }
+    filterDialog.hide();
+    currentImage = null;
+    selectedColor = null;
+  });
+}
+
+// function handleImageClick(event) {
+//   const mouseX = event.clientX;
+//   const mouseY = event.clientY;
+
+//   const filterDialog = $("#filterDialog");
+//   const filterColorOptions = filterDialog.find("select");
+
+//   filterDialog.css({ top: `${mouseY}px`, left: `${mouseX}px` });
+
+//   let currentImage = $(event.target);
+
+//   filterDialog.show();
+
+//   filterColorOptions.on("change", handleColorChange.bind(event, currentImage));
+// }
+
+// function handleColorChange(currentImage, event) {
+//   const selectedColor = event.target.value;
+
+//   if (currentImage !== null) {
+//     switch (selectedColor) {
+//       case "red":
+//         currentImage.css({
+//           filter: "brightness(50%) sepia(100%) hue-rotate(0deg) saturate(200%)",
+//         });
+//         break;
+//       case "blue":
+//         currentImage.css({
+//           filter:
+//             "brightness(50%) sepia(100%) hue-rotate(240deg) saturate(200%)",
+//         });
+//         break;
+//       case "green":
+//         currentImage.css({
+//           filter:
+//             "brightness(50%) sepia(100%) hue-rotate(120deg) saturate(200%)",
+//         });
+//         break;
+//       default:
+//         currentImage.css({ filter: "none" });
+//         break;
+//     }
+//   }
+//   currentImage = null;
+//   filterDialog.close();
+// }
 
 //#region not working
 // const portfolioItems = document.querySelectorAll(".work > img");
@@ -92,13 +206,12 @@ applyPortfolioFilter();
 //     filterDialog.style.left = `${mouseX}px`;
 
 //     let currentImage = event.target;
-//     // console.log(currentImage);
+
 //     filterDialog.show();
 
 //     filterColorOptions.addEventListener("change", (e) => {
 //       let selectedColor = e.target.value;
-//       // console.log("selectedColor before switch", selectedColor);
-//       // console.log("currentImage before switch", currentImage);
+
 //       if (currentImage !== null) {
 //         console.log(currentImage);
 //         switch (selectedColor) {
