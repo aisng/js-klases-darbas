@@ -1,4 +1,4 @@
-const waveformContainer = document.getElementById("audiowave");
+// const waveformContainer = $("#audiowave");
 
 let wavesurfer = WaveSurfer.create({
   container: "#audiowave",

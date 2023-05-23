@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Pradžia",
+    "url": "/"
+  },
+  {
+    "title": "Istorija",
+    "url": "/istorija.html"
+  },
+  {
+    "title": "Portfolio",
+    "url": "/portfolio.html"
+  },
+  {
+    "title": "Kontaktai",
+    "url": "/kontaktai.html"
+  }
+]
