@@ -37,7 +37,6 @@ function generatePortfolioElement(data) {
     src: data.src,
     alt: data.title,
     height: 200,
-    width: 200,
   });
   const span = $("<span>").text(data.title);
 
@@ -61,7 +60,7 @@ async function generatePorfolio(category = null) {
     }
   });
 }
-
+// still doesn't work properly
 function applyPortfolioFilter() {
   let checkedFilters = [];
 
