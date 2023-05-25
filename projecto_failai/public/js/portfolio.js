@@ -14,23 +14,6 @@ async function getPortfolio() {
   }
 }
 
-// function generatePortfolioElement(data) {
-//   let div = document.createElement("div");
-//   div.className = "work " + data.category;
-//   let img = document.createElement("img");
-//   let span = document.createElement("span");
-//   img.src = data.src;
-//   img.alt = data.title;
-//   img.height = 200;
-//   img.width = 200;
-//   span.textContent = data.title;
-
-//   div.append(img);
-//   div.append(span);
-
-//   return div;
-// }
-
 function generatePortfolioElement(data) {
   const div = $("<div>").addClass("work " + data.category);
   const img = $("<img>").attr({
@@ -60,7 +43,7 @@ async function generatePorfolio(category = null) {
     }
   });
 }
-// still doesn't work properly
+
 function applyPortfolioFilter() {
   let checkedFilters = [];
 
@@ -91,9 +74,7 @@ function applyPortfolioFilter() {
   });
 }
 
-generatePorfolio();
-applyPortfolioFilter();
-
+// still doesn't work properly
 function handleImageClick(event) {
   const mouseX = event.clientX;
   const mouseY = event.clientY;
@@ -143,6 +124,27 @@ function handleImageClick(event) {
   });
 }
 
+generatePorfolio();
+applyPortfolioFilter();
+
+//#region before jQuery
+// function generatePortfolioElement(data) {
+//   let div = document.createElement("div");
+//   div.className = "work " + data.category;
+//   let img = document.createElement("img");
+//   let span = document.createElement("span");
+//   img.src = data.src;
+//   img.alt = data.title;
+//   img.height = 200;
+//   img.width = 200;
+//   span.textContent = data.title;
+
+//   div.append(img);
+//   div.append(span);
+
+//   return div;
+// }
+
 // function handleImageClick(event) {
 //   const mouseX = event.clientX;
 //   const mouseY = event.clientY;
@@ -189,7 +191,7 @@ function handleImageClick(event) {
 //   currentImage = null;
 //   filterDialog.close();
 // }
-
+//#endregion
 //#region not working
 // const portfolioItems = document.querySelectorAll(".work > img");
 // const filterDialog = document.getElementById("filterDialog");
