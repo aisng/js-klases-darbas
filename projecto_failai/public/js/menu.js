@@ -24,7 +24,7 @@ export class Menu {
         .text(menuItemData.title);
 
       menuItem.append(link);
-      menu.append(menuItem); 
+      menu.append(menuItem);
     }
 
     navBar.append(menu);
@@ -81,14 +81,14 @@ export class Menu {
   //   $("main").load(redir + " main>*");
   // }
 
-  // makeNavItemActive() {
-  //   const menuButtons = document.querySelectorAll(".menu-button");
-  //   menuButtons.forEach((button) => {
-  //     const currentUrl = window.location.href.replace(".html", "");
-  //     const buttonUrl = button.href;
-  //     if (buttonUrl === currentUrl) {
-  //       button.classList.add("active");
-  //     }
-  //   });
-  // }
+  makeNavItemActive() {
+    const menuButtons = document.querySelectorAll(".menu-button");
+    menuButtons.forEach((button) => {
+      const currentUrl = window.location.href.replace(".html", "");
+      const buttonUrl = button.href;
+      if (buttonUrl === currentUrl) {
+        button.classList.add("active");
+      }
+    });
+  }
 }

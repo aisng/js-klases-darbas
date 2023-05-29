@@ -1,13 +1,13 @@
 [
   {
-    "title": "Tank game",
-    "src": "https://picsum.photos/500",
-    "category": "python"
-  },
-  {
     "title": "Form design",
     "src": "https://picsum.photos/500",
     "category": "html css"
+  },
+  {
+    "title": "Pygame",
+    "src": "https://picsum.photos/500",
+    "category": "python"
   },
   {
     "title": "Audio player",
