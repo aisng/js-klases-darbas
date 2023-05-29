@@ -1,18 +1,19 @@
 export class Api {
   constructor() {}
 
-  loadPage(page, successCallback, errorCallback) {
+  loadPage(page) {
     $.ajax({
       url: page,
       method: "GET",
       dataType: "html",
-      success: function (data) {
-        // console.log(data);
-        // let main = $(data).find("main").html();
-        successCallback(data);
+      success: (data) => {
+        const parser = new DOMParser();
+        const dataHtml = parser.parseFromString(data, "text/html");
+        const mainContent = dataHtml.querySelector("main > *");
+        $("main").html(mainContent);
       },
-      error: function () {
-        errorCallback(new Error("Couldn't load content."));
+      error: (error) => {
+        console.error("Couldn't load content", error);
       },
     });
   }

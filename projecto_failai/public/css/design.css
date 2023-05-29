@@ -40,6 +40,11 @@ aside > div p {
   text-align: center;
 }
 
+main > div > h1 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
 .grey {
   background-color: grey;
 }
