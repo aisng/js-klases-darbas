@@ -1,4 +1,4 @@
-export class ContactForm {
+export default class ContactForm {
   constructor() {
     $(document).on("submit", ".contact-form", (e) => {
       e.preventDefault();

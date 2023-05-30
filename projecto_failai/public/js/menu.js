@@ -1,4 +1,4 @@
-export class Menu {
+export default class Menu {
   constructor() {
     // const page = window.location.pathname;
 

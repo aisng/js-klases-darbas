@@ -1,4 +1,4 @@
-export class Api {
+export default class Api {
   constructor() {}
 
   loadPage(page) {
@@ -18,5 +18,3 @@ export class Api {
     });
   }
 }
-
-export default Api;

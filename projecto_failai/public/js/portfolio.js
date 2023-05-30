@@ -1,4 +1,4 @@
-export class Porfolio {
+export default class Porfolio {
   constructor() {
     this.generatePorfolio();
     this.applyPortfolioFilter();
