@@ -1,4 +1,2 @@
-export class ControllerInterface {
-    
-}
+export class ControllerInterface {}
 export default ControllerInterface;

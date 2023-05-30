@@ -1,8 +1,26 @@
 export default class Api {
-  constructor() {}
+  constructor() {
+    this.url = "http://localhost";
+  }
+
+  get(url) {
+    return $.ajax({
+      url: `${this.url}/${url}`,
+      method: "GET",
+      dataType: "json",
+    });
+  }
+
+  getText(url) {
+    return $.ajax({
+      url: `${this.url}/${url}`,
+      method: "GET",
+      dataType: "text",
+    });
+  }
 
   loadPage(page) {
-    $.ajax({
+    return $.ajax({
       url: page,
       method: "GET",
       dataType: "html",

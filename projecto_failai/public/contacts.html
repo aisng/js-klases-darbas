@@ -1,84 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kontaktai</title>
-    <link rel="stylesheet" href="/css/layout.css" />
-    <link rel="stylesheet" href="/css/tablets_layout.css" />
-    <link rel="stylesheet" href="/css/phones_layout.css" />
-    <link rel="stylesheet" href="/css/design.css" />
-  </head>
+<h1>[data.title]</h1>
+<form action="" method="post" class="contact-form">
+  <label for="vardas">Vardas</label>
+  <input class="text-input" type="text" name="firstName" id="vardas" />
 
-  <body>
-    <header>
-      <nav></nav>
-    </header>
-    <aside>
-      <div>
-        <h3>Tip of the day</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum in
-          architecto delectus iste magni maiores labore omnis, magnam fuga
-          cumque alias fugiat animi, ea perspiciatis aut minima velit nesciunt
-          dolorum voluptatibus doloribus! Deleniti quod tempora perspiciatis
-          nulla soluta? Nostrum quibusdam vitae, nam doloribus iusto nemo
-          aliquid assumenda modi voluptates, porro quod. Voluptatibus vero
-          incidunt repellat quidem! Dolorum quae accusantium.
-        </p>
-      </div>
-    </aside>
-    <main>
-      <div>
-        <h1>Kontaktai</h1>
-        <form action="" method="post" class="contact-form">
-          <label for="vardas">Vardas</label>
-          <input class="text-input" type="text" name="firstName" id="vardas" />
+  <label for="Pavarde">Pavarde</label>
+  <input class="text-input" type="text" name="lastName" id="pavarde" />
 
-          <label for="Pavarde">Pavarde</label>
-          <input class="text-input" type="text" name="lastName" id="pavarde" />
+  <label for="email">El. paštas</label>
+  <input class="email-input" type="email" name="email" id="email" />
 
-          <label for="email">El. paštas</label>
-          <input class="email-input" type="email" name="email" id="email" />
+  <label for="kursas">Kursas</label>
+  <select class="course-input" name="course" id="kursas" type="number">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+  </select>
 
-          <label for="kursas">Kursas</label>
-          <select class="course-input" name="course" id="kursas" type="number">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-          </select>
+  <label for="komentaras">Komentaras</label>
 
-          <label for="komentaras">Komentaras</label>
+  <textarea
+    class="comment-input"
+    name="comment"
+    id="komentaras"
+    cols="30"
+    rows="10"
+  ></textarea>
 
-          <textarea
-            class="comment-input"
-            name="comment"
-            id="komentaras"
-            cols="30"
-            rows="10"
-          ></textarea>
-
-          <button class="btn-contacts-submit" type="submit">Siųsti</button>
-        </form>
-        <div>
-          <p id="answer-text"></p>
-        </div>
-        <script
-          src="https://code.jquery.com/jquery-3.6.1.min.js"
-          defer
-        ></script>
-        <script type="module" src="/js/main.js" defer></script>
-
-        <!-- <script src="/js/menu.js" defer></script>
-        <script src="/js/form.js" defer></script> -->
-      </div>
-    </main>
-    <footer>
-      <span>
-        <p>&copy; 2023 - visos teisės saugomos</p>
-      </span>
-    </footer>
-  </body>
-</html>
+  <button class="btn-contacts-submit" type="submit">Siųsti</button>
+</form>
+<div>
+  <p id="answer-text"></p>
+</div>

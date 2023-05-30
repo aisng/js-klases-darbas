@@ -6,6 +6,6 @@ import Router from "./app/Router.js";
 window.onload = () => {
   new Router();
   new Menu();
-  new ContactForm();
-  new Porfolio();
+  // new ContactForm();
+  // new Porfolio();
 };

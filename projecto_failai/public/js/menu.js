@@ -31,7 +31,7 @@ export default class Menu {
 
     $(document).on("click", "nav a", function (e) {
       e.preventDefault();
-      $("main").load($(this).attr("href") + " main>*");
+      $("main").load($(this).attr("href"));
     });
   }
 

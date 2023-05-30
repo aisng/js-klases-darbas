@@ -1,4 +1,4 @@
-import IndexController from "../Controllers/IndexController.js";
+import MainController from "../Controllers/MainController.js";
 import HistoryController from "../Controllers/HistoryController.js";
 import PortfolioController from "../Controllers/PortfolioController.js";
 import ContactsController from "../Controllers/ContactsController.js";
@@ -9,7 +9,7 @@ export default class Router {
 
     this.routes = {
       "/": {
-        controller: new IndexController(),
+        controller: new MainController(),
         template: "index.html",
       },
       "/history": {
@@ -29,10 +29,11 @@ export default class Router {
     this.handleRoutes();
   }
 
-  handleRoutes() {
+  async handleRoutes() {
     if (this.path in this.routes) {
       const currentPage = this.routes[this.path];
-      currentPage.controller.index(currentPage.template);
+      console.log(currentPage.template);
+      await currentPage.controller.index(currentPage.template);
     } else {
       window.location.pathname = "/404.html";
     }
