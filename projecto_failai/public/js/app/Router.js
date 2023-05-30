@@ -10,7 +10,7 @@ export default class Router {
     this.routes = {
       "/": {
         controller: new MainController(),
-        template: "index.html",
+        template: "main.html",
       },
       "/history": {
         controller: new HistoryController(),
@@ -32,7 +32,8 @@ export default class Router {
   async handleRoutes() {
     if (this.path in this.routes) {
       const currentPage = this.routes[this.path];
-      console.log(currentPage.template);
+      // console.log("ROUTER this.path >", this.path);
+      // console.log("ROUTER currPage.temp >", currentPage.template);
       await currentPage.controller.index(currentPage.template);
     } else {
       window.location.pathname = "/404.html";

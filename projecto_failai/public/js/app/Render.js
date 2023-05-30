@@ -5,16 +5,15 @@ export default class Render {
     this.api = new Api();
   }
 
-  async renderView(templateUrl, data) {
-    console.log(templateUrl);
+  async renderView(templateUrl, data = [], callback = null) {
+    // console.log(templateUrl, data);
     try {
       const content = await this.api.getText(templateUrl);
+      // console.log(content);
       $("#app").html(this.replacePlaceholders(content, data));
-      console.log(content);
-      //   document.querySelector("#app").innerHTML = this.replacePlaceholders(
-      //     content,
-      //     data
-      //   );
+      if (typeof callback === "function") {
+        callback();
+      }
     } catch (error) {
       console.error(new Error(), error);
     }

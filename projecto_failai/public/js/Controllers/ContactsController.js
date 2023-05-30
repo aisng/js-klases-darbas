@@ -11,7 +11,6 @@ export default class ContactsController extends ControllerInterface {
 
   index(templateUrl) {
     this.api.get("/api/contacts").then((data) => {
-      console.log(data);
       this.render.renderView(templateUrl, data);
     });
   }

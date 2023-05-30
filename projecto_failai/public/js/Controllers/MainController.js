@@ -11,7 +11,6 @@ export default class MainController extends ControllerInterface {
 
   index(templateUrl) {
     this.api.get("/api/main").then((data) => {
-      console.log(data);
       this.render.renderView(templateUrl, data);
     });
   }

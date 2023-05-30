@@ -33,24 +33,25 @@ export default class Porfolio {
     $(".works").html("");
 
     let portfolioData = await this.getPortfolio();
-    // console.log(portfolioData);
+    console.log(portfolioData);
     portfolioData.forEach((item) => {
       if (category == null || item.category.includes(category)) {
         let workElement = this.generatePortfolioElement(item);
         let imgElement = $(workElement).find("img");
         $(".works").append(workElement);
 
-        $(imgElement).on("click", this.handleImageClick);
+        $(imgElement).on("click", this.showDialogFilter);
       }
     });
   }
 
   // still doesn't work properly
-  handleImageClick(event) {
+  showDialogFilter(event) {
     const mouseX = event.clientX;
     const mouseY = event.clientY;
 
     const filterDialog = $("#filterDialog");
+    console.log(filterDialog[0]);
     const filterColorOptions = filterDialog.find("select");
     filterDialog.css({
       top: `${mouseY}px`,

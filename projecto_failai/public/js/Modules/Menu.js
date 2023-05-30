@@ -1,4 +1,6 @@
-export default class Menu {
+import Render from "../app/Render.js";
+
+export class Menu {
   constructor() {
     // const page = window.location.pathname;
 
@@ -6,7 +8,7 @@ export default class Menu {
     //   this.redirectPage(page);
     // }
 
-    $.getJSON("menu.json", (data) => {
+    $.getJSON("/menu.json", (data) => {
       this.generateMenu(data);
     });
   }
@@ -22,7 +24,7 @@ export default class Menu {
       const link = $("<a>")
         .attr("href", menuItemData.url)
         .text(menuItemData.title);
-
+      console.log(link[0].href);
       menuItem.append(link);
       menu.append(menuItem);
     }
@@ -31,7 +33,9 @@ export default class Menu {
 
     $(document).on("click", "nav a", function (e) {
       e.preventDefault();
-      $("main").load($(this).attr("href"));
+      const render = new Render();
+      console.log($(this).attr("href"));
+      render.renderView($(this).attr("href"));
     });
   }
 

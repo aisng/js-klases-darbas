@@ -1,6 +1,6 @@
 export default class Api {
   constructor() {
-    this.url = "http://localhost";
+    this.url = "http://localhost/";
   }
 
   get(url) {
