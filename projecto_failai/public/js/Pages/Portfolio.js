@@ -33,7 +33,6 @@ export default class Porfolio {
     $(".works").html("");
 
     let portfolioData = await this.getPortfolio();
-    console.log(portfolioData);
     portfolioData.forEach((item) => {
       if (category == null || item.category.includes(category)) {
         let workElement = this.generatePortfolioElement(item);

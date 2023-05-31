@@ -11,7 +11,6 @@ export default class HistoryController extends ControllerInterface {
 
   index(templateUrl) {
     this.api.get("/api/history").then((data) => {
-      console.log(data);
       this.render.renderView(templateUrl, data);
     });
   }

@@ -1,15 +1,12 @@
-import Render from "../app/Render.js";
+import Router from "../app/Router.js";
 
 export class Menu {
   constructor() {
-    // const page = window.location.pathname;
-
-    // if (page) {
-    //   this.redirectPage(page);
-    // }
+    this.router = new Router();
 
     $.getJSON("/menu.json", (data) => {
       this.generateMenu(data);
+      // this.makeNavItemActive();
     });
   }
 
@@ -23,72 +20,31 @@ export class Menu {
       const menuItem = $("<li>");
       const link = $("<a>")
         .attr("href", menuItemData.url)
+        .attr("class", "menu-button")
         .text(menuItemData.title);
-      console.log(link[0].href);
+
       menuItem.append(link);
       menu.append(menuItem);
     }
 
     navBar.append(menu);
 
+    const router = this.router;
+
     $(document).on("click", "nav a", function (e) {
       e.preventDefault();
-      const render = new Render();
-      console.log($(this).attr("href"));
-      render.renderView($(this).attr("href"));
+
+      // console.log($(this).attr("href"));
+      router.handleRoutes($(this).attr("href"));
     });
   }
 
-  // getRedirectPage(pageWithoutExtension = null) {
-  //   let redir = null;
-  //   switch (pageWithoutExtension) {
-  //     case "/":
-  //     case "/index":
-  //       if (window.location.pathname !== "/") {
-  //         redir = "/";
-  //       }
-  //       break;
-  //     case "/istorija":
-  //       if (window.location.pathname !== "/istorija.html") {
-  //         redir = "istorija.html";
-  //       }
-  //       break;
-  //     case "/portfolio":
-  //       if (window.location.pathname !== "/portfolio.html") {
-  //         redir = "portfolio.html";
-  //       }
-  //       break;
-  //     case "/kontaktai":
-  //       if (window.location.pathname !== "/kontaktai.html") {
-  //         redir = "kontaktai.html";
-  //       }
-  //       break;
-  //     case "/404":
-  //       if (window.location.pathname !== "/404.html") {
-  //         redir = "404.html";
-  //       }
-  //       break;
-  //     default:
-  //       redir = "404.html";
-  //       break;
-  //   }
-  //   return redir;
-  // }
-
-  // redirectPage() {
-  //   const pageWithoutExtension = window.location.pathname.replace(
-  //     /\.html$/,
-  //     ""
-  //   );
-  //   let redir = this.getRedirectPage(pageWithoutExtension);
-
-  //   $("main").load(redir + " main>*");
-  // }
-
   makeNavItemActive() {
     const menuButtons = document.querySelectorAll(".menu-button");
+    console.log(menuButtons);
     menuButtons.forEach((button) => {
-      const currentUrl = window.location.href.replace(".html", "");
+      const currentUrl = window.location.href;
+      console.log(currentUrl);
       const buttonUrl = button.href;
       if (buttonUrl === currentUrl) {
         button.classList.add("active");

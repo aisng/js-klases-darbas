@@ -26,12 +26,12 @@ export default class Router {
       },
     };
 
-    this.handleRoutes();
+    this.handleRoutes(this.path);
   }
 
-  async handleRoutes() {
-    if (this.path in this.routes) {
-      const currentPage = this.routes[this.path];
+  async handleRoutes(path) {
+    if (path in this.routes) {
+      const currentPage = this.routes[path];
       // console.log("ROUTER this.path >", this.path);
       // console.log("ROUTER currPage.temp >", currentPage.template);
       await currentPage.controller.index(currentPage.template);
