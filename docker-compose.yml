@@ -1,4 +1,4 @@
-version: '3.9'
+version: "3.9"
 services:
   web:
     image: tautiz/web4study:latest
@@ -8,7 +8,7 @@ services:
     ports:
       - "80:80"
     environment:
-      PHP_IDE_CONFIG: 'serverName=web.local'
+      PHP_IDE_CONFIG: "serverName=web.local"
       APACHE_SERVER_NAME: web.local
       APPLICATION_ENV: development
       APACHE_LOG_DIR: /var/log/apache2
@@ -30,11 +30,15 @@ services:
       MYSQL_USER: devuser
       MYSQL_PASSWORD: devpass
 
-  mailpit:
-    image: axllent/mailpit:latest
-    ports:
-      - "8025:8025"
-      - "1025:1025"
+  node:
+    image: "node:latest"
+    user: "node"
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./projecto_failai:/home/node/app
+    command: "tail -f /dev/null"
 
 volumes:
   myapp:

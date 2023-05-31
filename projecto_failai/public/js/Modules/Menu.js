@@ -8,6 +8,8 @@ export class Menu {
       this.generateMenu(data);
       // this.makeNavItemActive();
     });
+
+    this.previousTarget = null;
   }
 
   generateMenu(menuData) {
@@ -29,26 +31,26 @@ export class Menu {
 
     navBar.append(menu);
 
-    const router = this.router;
+    // const router = this.router;
 
-    $(document).on("click", "nav a", function (e) {
+    $(".menu-button").on("click", (e) => {
       e.preventDefault();
-
-      // console.log($(this).attr("href"));
-      router.handleRoutes($(this).attr("href"));
+      this.makeNavItemActive(e);
+      // console.log(e.target);
+      this.router.handleRoutes($(e.target).attr("href"));
     });
   }
 
-  makeNavItemActive() {
-    const menuButtons = document.querySelectorAll(".menu-button");
-    console.log(menuButtons);
-    menuButtons.forEach((button) => {
-      const currentUrl = window.location.href;
-      console.log(currentUrl);
-      const buttonUrl = button.href;
-      if (buttonUrl === currentUrl) {
-        button.classList.add("active");
+  makeNavItemActive(e) {
+    const currentTarget = e.target;
+    // console.log(currentTarget);
+    // console.log(this.previousTarget);
+    if (currentTarget !== this.previousTarget) {
+      if (this.previousTarget) {
+        this.previousTarget.classList.remove("active");
       }
-    });
+      currentTarget.classList.add("active");
+    }
+    this.previousTarget = currentTarget;
   }
 }

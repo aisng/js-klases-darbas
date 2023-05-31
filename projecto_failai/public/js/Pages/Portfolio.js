@@ -39,26 +39,31 @@ export default class Porfolio {
         let imgElement = $(workElement).find("img");
         $(".works").append(workElement);
 
-        $(imgElement).on("click", this.showDialogFilter);
+        $(imgElement).on("click", this.showColorFilterDialog);
       }
     });
   }
 
   // still doesn't work properly
-  showDialogFilter(event) {
+  showColorFilterDialog(event) {
     const mouseX = event.clientX;
     const mouseY = event.clientY;
 
     const filterDialog = $("#filterDialog");
-    console.log(filterDialog[0]);
+    // console.log(filterDialog[0]);
     const filterColorOptions = filterDialog.find("select");
+    const filterColorCancel = filterDialog.find("button");
+
+    $(filterColorCancel).on("click", (e) => {
+      e.preventDefault();
+      filterDialog.hide();
+    });
     filterDialog.css({
       top: `${mouseY}px`,
       left: `${mouseX}px`,
     });
 
     let currentImage = event.target;
-
     filterDialog.show();
 
     $(filterColorOptions).on("change", (e) => {
