@@ -23,11 +23,12 @@ export default class Render {
     const regex = /\[([^\]]+)]/g;
     return str.replace(regex, (_, prop) => {
       let value = obj;
+      // console.log(value);
       const props = prop.split(".");
       if (value && value.hasOwnProperty(props[1])) {
         value = value[props[1]];
       } else {
-        return ""; // Return an empty string if any property is missing
+        return "";
       }
       return value;
     });

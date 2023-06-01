@@ -6,9 +6,6 @@
   <label for="Pavarde">Pavarde</label>
   <input class="text-input" type="text" name="lastName" id="pavarde" />
 
-  <label for="email">El. paštas</label>
-  <input class="email-input" type="email" name="email" id="email" />
-
   <label for="kursas">Kursas</label>
   <select class="course-input" name="course" id="kursas" type="number">
     <option value="1">1</option>
@@ -16,6 +13,9 @@
     <option value="3">3</option>
     <option value="4">4</option>
   </select>
+
+  <label for="email">El. paštas</label>
+  <input class="email-input" type="email" name="email" id="email" />
 
   <label for="komentaras">Komentaras</label>
 
@@ -29,6 +29,11 @@
 
   <button class="btn-contacts-submit" type="submit">Siųsti</button>
 </form>
-<div>
-  <p id="answer-text"></p>
+<div id="form-data" style="display: none">
+  <h3 id="submitted-success"></h3>
+  <p id="submitted-first-name"></p>
+  <p id="submitted-last-name"></p>
+  <p id="submitted-course"></p>
+  <p id="submitted-email"></p>
+  <p id="submitted-comment"></p>
 </div>

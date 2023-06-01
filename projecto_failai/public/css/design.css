@@ -75,3 +75,15 @@ main > div > h1 {
   z-index: 1;
   padding: 5px;
 }
+
+#form-data {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+#form-data > #submitted-success {
+  margin-bottom: 0.5rem;
+  color: rgb(50, 199, 50);
+}
