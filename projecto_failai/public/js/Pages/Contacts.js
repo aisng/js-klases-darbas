@@ -20,7 +20,8 @@ export default class ContactForm {
       body: JSON.stringify(data),
     };
     fetch(url, options)
-      .then((data) => console.log(data))
+      .then((response) => response.json())
+      .then((responseData) => console.log(responseData))
       .catch((error) => console.error(error));
   }
 }

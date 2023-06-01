@@ -23,18 +23,18 @@
   <button type="submit">Add comment</button>
 </div>
 <dialog id="filterDialog">
-  <form>
-    <label
-      >Pick a color:
-      <select name="" id="">
-        <option value="none">None</option>
-        <option value="red">Red</option>
-        <option value="blue">Blue</option>
-        <option value="green">Green</option>
-      </select>
-    </label>
+  <form method="dialog">
+    <label>Pick a color: </label>
+    <select id="colorFilterValues">
+      <option value="none" selected>None</option>
+      <option value="red">Red</option>
+      <option value="blue">Blue</option>
+      <option value="green">Green</option>
+    </select>
     <div>
-      <button id="cancelBtn" value="cancel" formmethod="dialog">Cancel</button>
+      <button id="cancelBtn" value="cancel" type="submit" formmethod="dialog">
+        Cancel
+      </button>
     </div>
   </form>
 </dialog>

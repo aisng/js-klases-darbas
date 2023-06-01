@@ -1,5 +1,4 @@
-import WaveSurfer from "https://unpkg.com/wavesurfer.js@beta";
-// import * as WaveSurferCursorPlugin from "./wavesurfer.js/dist/plugin/wavesurfer.cursor";
+import WaveSurfer from "../../../node_modules/wavesurfer.js/dist/wavesurfer.js";
 
 export class AudioPlayer {
   constructor() {

@@ -1,7 +1,7 @@
 export default class Porfolio {
   constructor() {
     this.generatePorfolio();
-    this.applyPortfolioFilter();
+    this.applyPortfolioItemsFilter();
   }
 
   async getPortfolio() {
@@ -36,37 +36,41 @@ export default class Porfolio {
     portfolioData.forEach((item) => {
       if (category == null || item.category.includes(category)) {
         let workElement = this.generatePortfolioElement(item);
-        let imgElement = $(workElement).find("img");
         $(".works").append(workElement);
-
-        $(imgElement).on("click", this.showColorFilterDialog);
       }
     });
+    $(".work > img").on("click", this.showColorFilterDialog);
   }
 
   // still doesn't work properly
-  showColorFilterDialog(event) {
+  showColorFilterDialog = (event) => {
     const mouseX = event.clientX;
     const mouseY = event.clientY;
 
-    const filterDialog = $("#filterDialog");
-    // console.log(filterDialog[0]);
-    const filterColorOptions = filterDialog.find("select");
-    const filterColorCancel = filterDialog.find("button");
+    // const filterDialog = $("#filterDialog");
+    // const filterColorCancel = filterDialog.find("button");
 
-    $(filterColorCancel).on("click", (e) => {
-      e.preventDefault();
-      filterDialog.hide();
-    });
-    filterDialog.css({
+    $("#filterDialog").css({
       top: `${mouseY}px`,
       left: `${mouseX}px`,
     });
 
-    let currentImage = event.target;
-    filterDialog.show();
+    $("#filterDialog").on("submit", (e) => {
+      e.preventDefault();
+      filterDialog[0].close();
+    });
 
-    $(filterColorOptions).on("change", (e) => {
+    let currentImage = event.target;
+    $("#filterDialog")[0].show();
+
+    if ($("#filterDialog")[0].open) {
+      this.applyColorFilter(currentImage);
+      currentImage = null;
+    }
+  };
+
+  applyColorFilter(currentImage) {
+    $("#colorFilterValues").on("change", (e) => {
       let selectedColor = e.target.value;
 
       if (currentImage !== null) {
@@ -94,13 +98,14 @@ export default class Porfolio {
             break;
         }
       }
-      filterDialog.hide();
       currentImage = null;
+      // previousImage = currentImage;
       selectedColor = null;
+      $("#filterDialog")[0].close();
     });
   }
 
-  applyPortfolioFilter() {
+  applyPortfolioItemsFilter() {
     let checkedFilters = [];
 
     $(".works-filter").on("change", (event) => {
@@ -133,122 +138,3 @@ export default class Porfolio {
     });
   }
 }
-
-// const portfolioFilter = document.querySelector(".works-filter");
-// const portfolioDiv = document.querySelector(".works");
-// const portfolioFilterBtnClear = document.querySelector(
-//   ".works-filter > button"
-// );
-//#region before jQuery
-// function generatePortfolioElement(data) {
-//   let div = document.createElement("div");
-//   div.className = "work " + data.category;
-//   let img = document.createElement("img");
-//   let span = document.createElement("span");
-//   img.src = data.src;
-//   img.alt = data.title;
-//   img.height = 200;
-//   img.width = 200;
-//   span.textContent = data.title;
-
-//   div.append(img);
-//   div.append(span);
-
-//   return div;
-// }
-
-// function handleImageClick(event) {
-//   const mouseX = event.clientX;
-//   const mouseY = event.clientY;
-
-//   const filterDialog = $("#filterDialog");
-//   const filterColorOptions = filterDialog.find("select");
-
-//   filterDialog.css({ top: `${mouseY}px`, left: `${mouseX}px` });
-
-//   let currentImage = $(event.target);
-
-//   filterDialog.show();
-
-//   filterColorOptions.on("change", handleColorChange.bind(event, currentImage));
-// }
-
-// function handleColorChange(currentImage, event) {
-//   const selectedColor = event.target.value;
-
-//   if (currentImage !== null) {
-//     switch (selectedColor) {
-//       case "red":
-//         currentImage.css({
-//           filter: "brightness(50%) sepia(100%) hue-rotate(0deg) saturate(200%)",
-//         });
-//         break;
-//       case "blue":
-//         currentImage.css({
-//           filter:
-//             "brightness(50%) sepia(100%) hue-rotate(240deg) saturate(200%)",
-//         });
-//         break;
-//       case "green":
-//         currentImage.css({
-//           filter:
-//             "brightness(50%) sepia(100%) hue-rotate(120deg) saturate(200%)",
-//         });
-//         break;
-//       default:
-//         currentImage.css({ filter: "none" });
-//         break;
-//     }
-//   }
-//   currentImage = null;
-//   filterDialog.close();
-// }
-//#endregion
-//#region not working
-// const portfolioItems = document.querySelectorAll(".work > img");
-// const filterDialog = document.getElementById("filterDialog");
-// const filterColorOptions = filterDialog.querySelector("select");
-
-// portfolioItems.forEach((image) => {
-//   image.addEventListener("click", (event) => {
-//     console.log("kliked");
-//     const mouseX = event.clientX;
-//     const mouseY = event.clientY;
-
-//     filterDialog.style.top = `${mouseY}px`;
-//     filterDialog.style.left = `${mouseX}px`;
-
-//     let currentImage = event.target;
-
-//     filterDialog.show();
-
-//     filterColorOptions.addEventListener("change", (e) => {
-//       let selectedColor = e.target.value;
-
-//       if (currentImage !== null) {
-//         console.log(currentImage);
-//         switch (selectedColor) {
-//           case "red":
-//             currentImage.style.filter =
-//               "brightness(50%) sepia(100%) hue-rotate(0deg) saturate(200%)";
-//             break;
-//           case "blue":
-//             currentImage.style.filter =
-//               "brightness(50%) sepia(100%) hue-rotate(240deg) saturate(200%)";
-//             break;
-//           case "green":
-//             currentImage.style.filter =
-//               "brightness(50%) sepia(100%) hue-rotate(120deg) saturate(200%)";
-//             break;
-//           default:
-//             currentImage.style.filter = "none";
-//             break;
-//         }
-//       }
-//       filterDialog.close();
-//       currentImage = null;
-//       selectedColor = null;
-//     });
-//   });
-// });
-//#endregion
